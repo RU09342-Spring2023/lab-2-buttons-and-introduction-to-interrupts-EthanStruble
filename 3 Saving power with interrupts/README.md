@@ -85,6 +85,7 @@ Polling Power:
 
 The bias is higher in the polling example because its checking all of the ports waiting for a response, this wastes power. 
 When compared to the interrupt this only checks the port when its told to, this allows the MC to be in low power mode and still operate.
+
 2. Even with the LED unplugged, why is there still power increases when you press the button?
 
 There is still a power increase because its still checking the port, regardless if something is attached to it. 
