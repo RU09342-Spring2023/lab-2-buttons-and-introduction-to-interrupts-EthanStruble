@@ -74,6 +74,16 @@ Then load up Energy Trace and perform the similar capture of Power with the LED 
 1. What is causing the bias/baseline in the polling example to be higher than the interrupt example.
 2. Even with the LED unplugged, why is there still power increases when you press the button?
 
+Responses:
 
-# Screenshots and Answers to Questions
-**Replace this section with your screenshots of Energy Trace and provide some reasoning as to Questions 1 and 2 in the Power consumption of the Interrupts Section.**
+Interrupt Power:
+![Polling_Power](https://user-images.githubusercontent.com/113445493/219256541-0314d799-8928-4a70-b261-b62a61b01f99.png)
+Polling Power:
+![Interrupt_Power](https://user-images.githubusercontent.com/113445493/219256556-4aed3b2c-cc07-4c2f-bc20-4918fb688ab5.png)
+
+1. What is causing the bias/baseline in the polling example to be higher than the interrupt example.
+The bias is higher in the polling example because its checking all of the ports waiting for a response, this wastes power. 
+When compared to the interrupt this only checks the port when its told to, this allows the MC to be in low power mode and still operate.
+2. Even with the LED unplugged, why is there still power increases when you press the button?
+There is still a power increase because its still checking the port, regardless if something is attached to it. 
+This applies to both polling and interrupt because the button is the trigger thus drawing attention to it even when its not required.
